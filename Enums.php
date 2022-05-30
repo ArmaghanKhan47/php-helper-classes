@@ -24,4 +24,12 @@ class Enum{
     public static function count(){
         return count(self::getAll());
     }
+    
+    public static function existsById($value){
+        return in_array($value, array_flip(self::getAll()));
+    }
+
+    public static function existsByName($value){
+        return in_array($value, self::getAll());
+    }
 }
